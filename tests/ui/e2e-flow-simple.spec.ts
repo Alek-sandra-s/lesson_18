@@ -78,7 +78,7 @@ test('TL-18-4 Check footer on order found page ', async ({ page }) => {
   await foundPage.checkFooterAttached()
 })
 
-test.only('TL-18-5 Check order status and customer data on order found page ', async ({ page }) => {
+test('TL-18-5 Check order status and customer data on order found page ', async ({ page }) => {
   const loginPage = new LoginPage(page)
   const foundPage = new OrderFoundPage(page)
   await loginPage.open()
