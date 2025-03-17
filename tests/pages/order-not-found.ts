@@ -1,16 +1,16 @@
-import {BasePage} from "./base-page";
-import {Page, Locator, expect} from "@playwright/test";
+import { BasePage } from './base-page'
+import { Page, Locator, expect } from '@playwright/test'
 
 export class OrderNotFoundPage extends BasePage {
-    readonly notFoundTitle: Locator
+  readonly notFoundTitle: Locator
 
-    constructor(page: Page) {
-        super(page);
-        this.notFoundTitle = page.locator('h1.not-found__title')
-    }
+  constructor(page: Page) {
+    super(page)
+    this.notFoundTitle = page.locator('h1.not-found__title')
+  }
 
-    async checkNotFoundTitle(): Promise<void> {
-        await expect(this.notFoundTitle).toBeVisible();
-        await expect(this.notFoundTitle).toHaveText('Order not found')
-    }
+  async checkNotFoundTitle(): Promise<void> {
+    await expect(this.notFoundTitle).toBeVisible()
+    await expect(this.notFoundTitle).toHaveText('Order not found')
+  }
 }

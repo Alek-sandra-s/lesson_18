@@ -1,14 +1,13 @@
-import {Locator, Page} from '@playwright/test'
+import { Locator, Page } from '@playwright/test'
 import { Input } from '../atoms/Input'
 import { Button } from '../atoms/Button'
-import {BasePage} from "./base-page";
-import {B} from "@faker-js/faker/dist/airline-BLb3y-7w";
+import { BasePage } from './base-page'
 
 export class OrderPage extends BasePage {
   readonly statusButton: Button
-  readonly nameField: Input;
-  readonly phoneField: Input;
-  readonly commentField: Input;
+  readonly nameField: Input
+  readonly phoneField: Input
+  readonly commentField: Input
   readonly statusModal: Locator
   readonly orderNumberField: Input
   readonly trackButton: Button
@@ -21,6 +20,9 @@ export class OrderPage extends BasePage {
     this.commentField = new Input(page, '#comment')
     this.statusModal = page.getByTestId('searchOrder-popup')
     this.orderNumberField = new Input(page, '[data-name="searchOrder-popup"] input')
-    this.trackButton = new Button(page, '[data-name="searchOrder-popup"] button.order-search-popup__button')
+    this.trackButton = new Button(
+      page,
+      '[data-name="searchOrder-popup"] button.order-search-popup__button',
+    )
   }
 }
